@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		262E69DC201FFBED00145316 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262E69DB201FFBED00145316 /* AppDelegate.swift */; };
-		262E69DE201FFBED00145316 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262E69DD201FFBED00145316 /* ViewController.swift */; };
+		262E69DE201FFBED00145316 /* MonstersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262E69DD201FFBED00145316 /* MonstersTableViewController.swift */; };
 		262E69E1201FFBED00145316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262E69DF201FFBED00145316 /* Main.storyboard */; };
 		262E69E3201FFBED00145316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262E69E2201FFBED00145316 /* Assets.xcassets */; };
 		262E69E6201FFBED00145316 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262E69E4201FFBED00145316 /* LaunchScreen.storyboard */; };
 		262E69F1201FFBED00145316 /* DM_EncountersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262E69F0201FFBED00145316 /* DM_EncountersTests.swift */; };
 		262E69FC201FFBED00145316 /* DM_EncountersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262E69FB201FFBED00145316 /* DM_EncountersUITests.swift */; };
+		262E6A0E201FFD4F00145316 /* Monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = 262E6A0D201FFD4F00145316 /* Monsters.json */; };
+		262E6A102020006300145316 /* Monsters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262E6A0F2020006300145316 /* Monsters.swift */; };
+		262E6A122021609D00145316 /* ReadJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262E6A112021609D00145316 /* ReadJSON.swift */; };
+		26D7A3C4202169D7004B8FCC /* MonsterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7A3C3202169D7004B8FCC /* MonsterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		262E69D8201FFBED00145316 /* DM Encounters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DM Encounters.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		262E69DB201FFBED00145316 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		262E69DD201FFBED00145316 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		262E69DD201FFBED00145316 /* MonstersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonstersTableViewController.swift; sourceTree = "<group>"; };
 		262E69E0201FFBED00145316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		262E69E2201FFBED00145316 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		262E69E5201FFBED00145316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,10 @@
 		262E69F7201FFBED00145316 /* DM EncountersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DM EncountersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		262E69FB201FFBED00145316 /* DM_EncountersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DM_EncountersUITests.swift; sourceTree = "<group>"; };
 		262E69FD201FFBED00145316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		262E6A0D201FFD4F00145316 /* Monsters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Monsters.json; sourceTree = "<group>"; };
+		262E6A0F2020006300145316 /* Monsters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monsters.swift; sourceTree = "<group>"; };
+		262E6A112021609D00145316 /* ReadJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadJSON.swift; sourceTree = "<group>"; };
+		26D7A3C3202169D7004B8FCC /* MonsterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				262E69DA201FFBED00145316 /* DM Encounters */,
-				262E69EF201FFBED00145316 /* DM EncountersTests */,
-				262E69FA201FFBED00145316 /* DM EncountersUITests */,
 				262E69D9201FFBED00145316 /* Products */,
+				262E6A0A201FFC3200145316 /* Resources */,
+				262E6A09201FFBF500145316 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				262E69DB201FFBED00145316 /* AppDelegate.swift */,
-				262E69DD201FFBED00145316 /* ViewController.swift */,
+				262E69DD201FFBED00145316 /* MonstersTableViewController.swift */,
+				26D7A3C3202169D7004B8FCC /* MonsterDetailViewController.swift */,
+				262E6A112021609D00145316 /* ReadJSON.swift */,
+				262E6A0F2020006300145316 /* Monsters.swift */,
 				262E69DF201FFBED00145316 /* Main.storyboard */,
 				262E69E2201FFBED00145316 /* Assets.xcassets */,
 				262E69E4201FFBED00145316 /* LaunchScreen.storyboard */,
@@ -123,6 +134,23 @@
 				262E69FD201FFBED00145316 /* Info.plist */,
 			);
 			path = "DM EncountersUITests";
+			sourceTree = "<group>";
+		};
+		262E6A09201FFBF500145316 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				262E69FA201FFBED00145316 /* DM EncountersUITests */,
+				262E69EF201FFBED00145316 /* DM EncountersTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		262E6A0A201FFC3200145316 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				262E6A0D201FFD4F00145316 /* Monsters.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262E6A0E201FFD4F00145316 /* Monsters.json in Resources */,
 				262E69E6201FFBED00145316 /* LaunchScreen.storyboard in Resources */,
 				262E69E3201FFBED00145316 /* Assets.xcassets in Resources */,
 				262E69E1201FFBED00145316 /* Main.storyboard in Resources */,
@@ -259,8 +288,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				262E69DE201FFBED00145316 /* ViewController.swift in Sources */,
+				262E69DE201FFBED00145316 /* MonstersTableViewController.swift in Sources */,
+				262E6A122021609D00145316 /* ReadJSON.swift in Sources */,
+				26D7A3C4202169D7004B8FCC /* MonsterDetailViewController.swift in Sources */,
 				262E69DC201FFBED00145316 /* AppDelegate.swift in Sources */,
+				262E6A102020006300145316 /* Monsters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
