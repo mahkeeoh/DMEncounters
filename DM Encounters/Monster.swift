@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Monsters: Codable {
+struct Monster: Codable {
     let name: String
     let size: String
     let type: String
@@ -36,11 +36,11 @@ struct Monsters: Codable {
     let senses: String?
     let languages: String?
     let challengeRating: String
-   // var specialAbilities: [[String: String]]
-  //  var actions: [[String: String]]
-  //  var legendaryActions: [[String: String]]
+    var specialAbilities: [SpecialAbility]?
+    var actions: [Action]?
+    var legendaryActions: [LegendaryAction]?
     
-    enum CodingKeys : String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         
         case name
         case size
@@ -69,11 +69,57 @@ struct Monsters: Codable {
         case senses
         case languages
         case challengeRating = "challenge_rating"
-     //   case specialAbilities = "special_abilities"
-     //   case actions
-     //   case legendaryActions = "legendary_actions"
+        case specialAbilities = "special_abilities"
+        case actions
+        case legendaryActions = "legendary_actions"
         
     }
+}
+
+struct SpecialAbility: Codable {
+    let name: String
+    let desc: String
+    let attackBonus: Int?
+    let damageDice: String?
+    let damageBonus: Int?
     
+    enum codingKeys: String, CodingKey {
+        case name
+        case desc
+        case attackBonus = "attack_bonus"
+        case damageDice = "damage_dice"
+        case damageBonus = "damage_bonus"
+    }
+}
     
+struct Action: Codable {
+    let name: String
+    let desc: String
+    let attackBonus: Int?
+    let damageDice: String?
+    let damageBonus: Int?
+    
+    enum codingKeys: String, CodingKey {
+        case name
+        case desc
+        case attackBonus = "attack_bonus"
+        case damageDice = "damage_dice"
+        case damageBonus = "damage_bonus"
+    }
+}
+
+struct LegendaryAction: Codable {
+    let name: String
+    let desc: String
+    let attackBonus: Int?
+    let damageDice: String?
+    let damageBonus: Int?
+    
+    enum codingKeys: String, CodingKey {
+        case name
+        case desc
+        case attackBonus = "attack_bonus"
+        case damageDice = "damage_dice"
+        case damageBonus = "damage_bonus"
+    }
 }

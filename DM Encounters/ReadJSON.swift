@@ -7,15 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
-struct ReadJSON {
+extension UIViewController {
     func readJson(with title: String) -> [Any]? {
         do {
             if let file = Bundle.main.url(forResource: title, withExtension: "json") {
                 let data = try Data(contentsOf: file)
                 let decoder = JSONDecoder()
                 do {
-                    let monsters = try decoder.decode([FailableDecodable<Monsters>].self, from: data).flatMap { $0.base }
+                    let monsters = try decoder.decode([FailableDecodable<Monster>].self, from: data).flatMap { $0.base }
                     return(monsters)
                 } catch {
                     print("Error decoding")

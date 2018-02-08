@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MonstersTableViewController: UITableViewController {
     
-    var monsters = [Monsters]()
+    var monsters: Results<MonsterRealm> // initialize?
     let jSONName = "Monsters"
 
     // App setup
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let jSONStruct = ReadJSON()
-        if let monstersJSON = jSONStruct.readJson(with: jSONName) as? [Monsters] {
+        // Load JSON and add to realm
+        let realm = try! Realm()
+        monsters = realm.objects(MonsterRealm.self)
+        
+        if let monstersJSON = self.readJson(with: jSONName) as? [Monster] {
             monsters = monstersJSON
         }
     }
@@ -68,7 +72,7 @@ class MonstersTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "monsterDetail"?:
-            if let monsterDetailVC = segue.destination as? MonsterDetailViewController {
+            if let monsterDetailVC = segue.destination.content as? MonsterDetailViewController {
                 if let indexPath = tableView.indexPathForSelectedRow {
                     monsterDetailVC.monster = monsters[indexPath.row]
                 }
@@ -81,5 +85,17 @@ class MonstersTableViewController: UITableViewController {
     
     
     
+}
+
+extension UIViewController {
+    
+    var content: UIViewController {
+        if let navCon = self as? UINavigationController {
+            return navCon.visibleViewController ?? self
+        }
+        else {
+            return self
+        }
+    }
 }
 
